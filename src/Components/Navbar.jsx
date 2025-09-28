@@ -24,16 +24,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <motion.div
-          className="mb-6 md:mb-0 md:mr-10 flex-shrink-0"
+          className="flex items-center mr-4"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}>
           <motion.img
             src={mylogo}
             alt="Profile"
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-4 border-yellow-500 object-cover"
+            className="w-10 h-10 rounded-full border-4 border-yellow-500 object-cover"
             animate={{ rotate: 360 }}
             transition={{
               repeat: Infinity,
@@ -43,32 +43,34 @@ export default function Navbar() {
           />
         </motion.div>
 
-        <ul className="hidden md:flex space-x-4 lg:space-x-8 text-yellow-500 font-medium">
+        <ul className="hidden md:flex items-center space-x-4 lg:space-x-8 text-yellow-500 font-medium">
           <li>
-            <a href="#home" className="hover:text-blue-500">
+            <a href="#home" className="hover:text-blue-500 px-2 py-1 rounded transition-colors duration-200">
               Home
             </a>
           </li>
           <li>
-            <a href="#about" className="hover:text-blue-500">
+            <a href="#about" className="hover:text-blue-500 px-2 py-1 rounded transition-colors duration-200">
               About
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-blue-500">
+            <a href="#projects" className="hover:text-blue-500 px-2 py-1 rounded transition-colors duration-200">
               Projects
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-blue-500">
+            <a href="#contact" className="hover:text-blue-500 px-2 py-1 rounded transition-colors duration-200">
               Contact
             </a>
           </li>
         </ul>
 
         <button
-          className="md:hidden text-yellow-600 focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}>
+          className="md:hidden text-yellow-600 focus:outline-none text-3xl px-2 py-1 rounded"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
           {isOpen ? "✕" : "☰"}
         </button>
       </div>
@@ -80,13 +82,15 @@ export default function Navbar() {
             animate="visible"
             exit="exit"
             variants={menuVariants}
-            className="md:hidden absolute top-full left-0 w-full bg-white shadow-md px-6 pb-4 space-y-2 text-gray-600 font-medium">
+            className="md:hidden absolute top-full left-0 w-full bg-white shadow-md px-6 pb-4 pt-4 space-y-2 text-gray-600 font-medium text-center rounded-b-xl"
+          >
             {["Home", "About", "Projects", "Contact"].map((item) => (
               <motion.li key={item} variants={itemVariants}>
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className="block hover:text-blue-500"
-                  onClick={() => setIsOpen(false)}>
+                  className="block hover:text-blue-500 py-2 rounded transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
                   {item}
                 </a>
               </motion.li>
