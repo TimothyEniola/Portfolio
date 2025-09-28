@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import mylogo from "../assets/mylogo.png";
 import expence from "../assets/expence.png";
 import port from "../assets/port.png";
+import ecom from "../assets/ecom.png";
+
 export default function App() {
   const projects = [
     {
@@ -16,8 +18,8 @@ export default function App() {
     {
       title: "E-Commerce Platform",
       desc: "An e-commerce platform designed for small businesses to showcase and sell products online, with integrated payment solutions.",
-      img: expence,
-      link: "https://your-project-two-link.com",
+      img: ecom,
+      link: "https://app.44saturnclothing.com/",
     },
     {
       title: "Portfolio Website",
