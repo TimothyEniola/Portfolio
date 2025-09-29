@@ -15,7 +15,6 @@ export default function App() {
       desc: "A web application that helps users track their tasks and increase productivity. Built with React and Tailwind CSS.",
       img: expence,
       link: "https://trackeet-project.vercel.app/login",
-      p: "clic",
     },
     {
       title: "E-Commerce Platform",
@@ -34,6 +33,7 @@ export default function App() {
   return (
     <div className="font-sans  text-gray-800">
       <Navbar />
+      {/* Home Section */}
       <section
         id="home"
         className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white px-4 md:px-16 pt-24 md:pt-32">
@@ -81,6 +81,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* About Section */}
       <section
         id="about"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
@@ -114,6 +115,7 @@ export default function App() {
         </motion.p>
       </section>
 
+      {/* Projects Section */}
       <section
         id="projects"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
@@ -150,6 +152,9 @@ export default function App() {
                     {project.title}
                   </h3>
                   <p className="text-gray-700">{project.desc}</p>
+                  <p className="mt-4 text-yellow-600 font-semibold hover:underline">
+                    🔗 Click to View
+                  </p>
                 </div>
               </div>
             </motion.a>
@@ -157,6 +162,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Experience Section */}
       <section
         id="experience"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
@@ -206,6 +212,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Skills Section */}
       <section
         id="skills"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
@@ -242,6 +249,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Contact Section */}
       <section
         id="contact"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
