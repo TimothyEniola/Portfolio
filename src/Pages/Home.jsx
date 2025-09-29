@@ -6,6 +6,7 @@ import mylogo from "../assets/mylogo.png";
 import expence from "../assets/expence.png";
 import port from "../assets/port.png";
 import ecom from "../assets/ecom.png";
+import { p } from "framer-motion/client";
 
 export default function App() {
   const projects = [
@@ -14,6 +15,7 @@ export default function App() {
       desc: "A web application that helps users track their tasks and increase productivity. Built with React and Tailwind CSS.",
       img: expence,
       link: "https://trackeet-project.vercel.app/login",
+      p: "clic",
     },
     {
       title: "E-Commerce Platform",
@@ -28,6 +30,7 @@ export default function App() {
       link: "https://portfolio-black-eta-85.vercel.app/",
     },
   ];
+
   return (
     <div className="font-sans  text-gray-800">
       <Navbar />
@@ -77,6 +80,7 @@ export default function App() {
           </motion.a>
         </div>
       </section>
+
       <section
         id="about"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
@@ -109,6 +113,7 @@ export default function App() {
           creative projects, and contributing to open-source communities.
         </motion.p>
       </section>
+
       <section
         id="projects"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
@@ -151,6 +156,92 @@ export default function App() {
           ))}
         </div>
       </section>
+
+      <section
+        id="experience"
+        className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
+        <motion.h2
+          className="text-4xl font-semibold mb-8 text-yellow-600"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}>
+          Experience
+        </motion.h2>
+
+        <div className="max-w-4xl space-y-6 text-white">
+          <motion.div
+            className="bg-gray-900 border-l-4 border-yellow-500 p-6 rounded-lg shadow-md"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}>
+            <h3 className="text-2xl font-bold text-yellow-500">
+              Frontend Developer @ Grazac Academy
+            </h3>
+            <p className="text-sm text-gray-400">2023 - Present</p>
+            <p className="mt-2 text-gray-300">
+              Built responsive and user-friendly web applications using React,
+              Tailwind CSS, and Framer Motion. Collaborated with backend teams
+              to integrate APIs and deliver seamless user experiences.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="bg-gray-900 border-l-4 border-yellow-500 p-6 rounded-lg shadow-md"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}>
+            <h3 className="text-2xl font-bold text-yellow-500">
+              Web Developer Intern @ Grazac Company
+            </h3>
+            <p className="text-sm text-gray-400">2022 - 2023</p>
+            <p className="mt-2 text-gray-300">
+              Assisted in developing and maintaining websites, improved UI/UX
+              components, and gained hands-on experience with version control
+              using Git and GitHub.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
+        <motion.h2
+          className="text-4xl font-semibold mb-8 text-yellow-600"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}>
+          Skills
+        </motion.h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-white max-w-4xl">
+          {[
+            "React.js",
+            "Next.js",
+            "Tailwind CSS",
+            "TypeScript",
+            "Git & GitHub",
+            "REST APIs",
+            "Framer Motion",
+            "Responsive Design",
+          ].map((skill, index) => (
+            <motion.div
+              key={index}
+              className="bg-gray-900 border border-yellow-500 px-6 py-4 rounded-lg shadow-md text-center font-medium hover:scale-105 transition-transform duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}>
+              {skill}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       <section
         id="contact"
         className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
